@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Images/NewCharaterDead.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Corpse.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 4 )
+
+[node name="Corpse" type="KinematicBody2D" groups=[
+"corpse",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 30
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 21.51
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.478
+one_shot = true
+autostart = true
+
+[node name="characterdead" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

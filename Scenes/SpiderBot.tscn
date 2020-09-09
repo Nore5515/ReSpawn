@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/SpiderBot.gd" type="Script" id=2]
+[ext_resource path="res://Images/spider (2).png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2, 4 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2, 1 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5, 4 )
+
+[node name="SpiderBot" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="LeftBumper" type="Area2D" parent="."]
+position = Vector2( -4, -2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBumper"]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="LeftFloorRail" type="Area2D" parent="."]
+position = Vector2( -7, 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFloorRail"]
+shape = SubResource( 3 )
+
+[node name="RightBumper" type="Area2D" parent="."]
+position = Vector2( 4, -2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBumper"]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="RightFloorRail" type="Area2D" parent="."]
+position = Vector2( 7, 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightFloorRail"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Killbox" type="Area2D" parent="."]
+position = Vector2( -1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox"]
+position = Vector2( 1, 0 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="LeftBumper" to="." method="_on_LeftBumper_body_entered"]
+[connection signal="body_exited" from="LeftFloorRail" to="." method="_on_LeftFloorRail_body_exited"]
+[connection signal="body_entered" from="RightBumper" to="." method="_on_RightBumper_body_entered"]
+[connection signal="body_exited" from="RightFloorRail" to="." method="_on_RightFloorRail_body_exited"]
+[connection signal="body_entered" from="Killbox" to="." method="_on_Killbox_body_entered"]

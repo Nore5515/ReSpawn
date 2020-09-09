@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SpiderBot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=5]
+
+[node name="TESTING" type="Node2D"]
+script = ExtResource( 4 )
+first = true
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 327689, 2, 0, 327690, 536870914, 0, 655365, 9, 0, 655366, 10, 0, 655373, -1610612733, 0, 720901, 2, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 536870914, 0 )
+
+[node name="Checkpoint" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 84, 36 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 79, 36 )
+
+[node name="SpiderBot" parent="." instance=ExtResource( 3 )]
+position = Vector2( 75, 84 )

@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Sounds/No_corpse_death.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/Dead.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/jump_6.wav" type="AudioStream" id=4]
+[ext_resource path="res://Images/NewCharater-BU (1).png" type="Texture" id=5]
+[ext_resource path="res://Images/NewCharater-LD-RU (1).png" type="Texture" id=6]
+[ext_resource path="res://Images/NewCharater-Lu-Rd (1).png" type="Texture" id=7]
+[ext_resource path="res://Images/NewCharater-BD (1).png" type="Texture" id=8]
+[ext_resource path="res://Images/0.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 4 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Jumping",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="DeadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 3.029
+
+[node name="NoCorpseDeadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 3.029
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Idle"
+playing = true
+
+[node name="DeathCounter" type="HBoxContainer" parent="."]
+margin_left = -8.0
+margin_top = -17.0
+margin_right = 8.0
+margin_bottom = -5.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tens" type="TextureRect" parent="DeathCounter"]
+margin_right = 6.0
+margin_bottom = 12.0
+texture = ExtResource( 9 )
+
+[node name="Singles" type="TextureRect" parent="DeathCounter"]
+margin_left = 10.0
+margin_right = 16.0
+margin_bottom = 12.0
+texture = ExtResource( 9 )

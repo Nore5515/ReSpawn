@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+
+[node name="icon" type="Sprite"]
+position = Vector2( 62.954, 68.4797 )
+scale = Vector2( 0.220052, 0.220052 )
+texture = SubResource( 1 )

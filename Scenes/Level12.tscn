@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/SceneTrans.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/DeathFloor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/darkscreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/SpiderBot.tscn" type="PackedScene" id=8]
+
+[node name="Level12" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="darkscreen" parent="." instance=ExtResource( 7 )]
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 65535, -536870903, 0, 20, 3, 0, 131071, -536870903, 0, 65556, 3, 0, 196607, -536870903, 0, 131092, 3, 0, 262143, -536870903, 0, 196612, -1610612733, 0, 196613, -1610612733, 0, 196614, -1610612733, 0, 196615, -1610612733, 0, 196616, -1610612733, 0, 196617, -1610612733, 0, 196618, -1610612733, 0, 196619, -1610612733, 0, 196620, -1610612733, 0, 196621, -1610612733, 0, 196622, -1610612725, 0, 196628, 3, 0, 327679, -536870903, 0, 262158, 3, 0, 262164, 3, 0, 393215, -536870903, 0, 327694, 3, 0, 327700, 3, 0, 458751, -536870903, 0, 393216, 536870914, 0, 393230, 3, 0, 393236, 3, 0, 524287, -536870903, 0, 458752, 2, 0, 458753, 536870913, 0, 458754, 536870913, 0, 458755, 536870913, 0, 458756, 536870913, 0, 458757, 536870913, 0, 458758, 536870913, 0, 458759, 536870913, 0, 458760, 536870913, 0, 458761, 536870913, 0, 458762, 536870914, 0, 458766, 3, 0, 458772, 3, 0, 589823, -536870903, 0, 524302, 3, 0, 524308, 3, 0, 655359, -536870903, 0, 589838, 3, 0, 589844, 3, 0, 720895, -536870903, 0, 655360, 2, 0, 655361, 536870914, 0, 655374, 3, 0, 655380, 3, 0, 786431, -536870903, 0, 720896, -1610612733, 0, 720897, -1610612733, 0, 720898, -1610612733, 0, 720899, -1610612733, 0, 720900, -1610612733, 0, 720901, -1610612733, 0, 720902, -1610612733, 0, 720903, -1610612733, 0, 720904, -1610612733, 0, 720905, -1610612733, 0, 720906, -1610612733, 0, 720907, -1610612733, 0, 720908, -1610612733, 0, 720909, -1610612733, 0, 720910, -1610612725, 0, 720916, 3, 0, 851967, -536870903, 0, 786449, 2, 0, 786450, 1, 0, 786451, 536870914, 0, 786452, 3, 0, 917503, -536870903, 0, 851988, 3, 0, 983039, -536870903, 0, 917524, 3, 0, 1048575, -536870903, 0, 983047, 2, 0, 983048, 536870913, 0, 983049, 536870913, 0, 983050, 536870913, 0, 983051, 536870913, 0, 983052, 536870913, 0, 983053, 536870914, 0, 983060, 3, 0, 1114111, -536870903, 0, 1048576, 2, 0, 1048577, 536870913, 0, 1048578, 536870914, 0, 1048596, 3, 0, 1179647, -536870903, 0, 1114112, 2, 0, 1114113, 536870913, 0, 1114114, 536870914, 0, 1114132, 3, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 6, 76 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 5 )]
+position = Vector2( 10, 76 )
+
+[node name="Checkpoint2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 154, 92 )
+
+[node name="Death" parent="." instance=ExtResource( 3 )]
+position = Vector2( 82.1423, 172.413 )
+
+[node name="SceneTrans" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3, 113 )
+level = "Level13"
+curLevel = 12
+
+[node name="SpiderBot" parent="." instance=ExtResource( 8 )]
+position = Vector2( 62, 84 )
+
+[node name="SpiderBot2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 40, 52 )
+
+[node name="SpiderBot3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 79, 116 )

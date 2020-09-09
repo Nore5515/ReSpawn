@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/No_corpse_death.wav-b649c0a38fc898d2503e17a4ba07c1ed.sample"
+
+[deps]
+
+source_file="res://Sounds/No_corpse_death.wav"
+dest_files=[ "res://.import/No_corpse_death.wav-b649c0a38fc898d2503e17a4ba07c1ed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

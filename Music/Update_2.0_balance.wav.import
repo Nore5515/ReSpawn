@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Update_2.0_balance.wav-af3e3cc77e16218dc096a72ec58e8354.sample"
+
+[deps]
+
+source_file="res://Music/Update_2.0_balance.wav"
+dest_files=[ "res://.import/Update_2.0_balance.wav-af3e3cc77e16218dc096a72ec58e8354.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

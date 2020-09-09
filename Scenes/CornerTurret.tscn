@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Turret.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/Shoot_bollet.wav" type="AudioStream" id=3]
+[ext_resource path="res://Images/TURRET (4).png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.01043, 3.98294 )
+
+[node name="Turret" type="KinematicBody2D"]
+rotation = 0.785397
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="TURRET (4)" type="Sprite" parent="."]
+rotation = -0.785397
+texture = ExtResource( 4 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

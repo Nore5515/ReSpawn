@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/SceneTrans.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/DeathFloor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/darkscreen.tscn" type="PackedScene" id=7]
+
+[node name="Level8" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="darkscreen" parent="." instance=ExtResource( 7 )]
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 0, -2147483645, 0, 1, -2147483645, 0, 2, -2147483645, 0, 3, -2147483645, 0, 4, -2147483645, 0, 5, -2147483645, 0, 6, -2147483645, 0, 7, -2147483645, 0, 8, -2147483645, 0, 9, -2147483645, 0, 10, -2147483645, 0, 11, -2147483645, 0, 12, -2147483645, 0, 13, -2147483645, 0, 14, -2147483645, 0, 15, -2147483645, 0, 16, -2147483645, 0, 17, -2147483645, 0, 18, -2147483645, 0, 19, 11, 0, 65555, 536870915, 0, 131091, 536870915, 0, 196608, 11, 0, 196609, -2147483645, 0, 196610, 11, 0, 196627, 536870915, 0, 262144, 1073741827, 0, 262146, 536870915, 0, 262163, 536870915, 0, 327680, 1073741827, 0, 327682, 11, 0, 327683, -2147483645, 0, 327684, -2147483645, 0, 327699, 536870915, 0, 393216, 1073741827, 0, 393235, 536870915, 0, 458752, 1073741827, 0, 458761, -2147483645, 0, 458762, 11, 0, 458771, 536870915, 0, 524288, 1073741827, 0, 524298, 536870915, 0, 524307, 536870915, 0, 589824, 1073741827, 0, 589834, 11, 0, 589835, -2147483645, 0, 589843, 536870915, 0, 655360, 1073741827, 0, 655379, 536870915, 0, 720896, 1073741827, 0, 720915, 536870915, 0, 786432, 1073741827, 0, 786451, 536870915, 0, 851968, 1073741827, 0, 851984, 2, 0, 851985, 536870913, 0, 851986, 536870914, 0, 851987, 11, 0, 917504, 1073741827, 0, 983040, 1073741827, 0, 1048576, 1073741827, 0, 1114112, 1073741827, 0, 1114131, 2, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5.17183, 17.3557 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 5 )]
+position = Vector2( 6.54075, 19.8974 )
+
+[node name="Death" parent="." instance=ExtResource( 3 )]
+position = Vector2( 82.1423, 172.413 )
+
+[node name="SceneTrans" parent="." instance=ExtResource( 1 )]
+position = Vector2( 155.614, 123.851 )
+level = "Level9"
+curLevel = 8
